@@ -1,0 +1,930 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --ink: #f5f5f2;
+  --muted: #a4aaa7;
+  --background: #101312;
+  --surface: #191e1c;
+  --surface-light: #222927;
+  --line: rgba(255, 255, 255, 0.11);
+  --green: #b4ef65;
+  --green-dark: #8dc93c;
+  --font-body: 'DM Sans', Arial, sans-serif;
+  --font-heading: 'Manrope', 'Arial', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--background);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 78px;
+  padding: 0 7.2%;
+  border-bottom: 1px solid var(--line);
+  background: rgba(16, 19, 18, 0.94);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.brand-light {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  color: #d2d5d2;
+  font-size: 13px;
+}
+
+.main-nav a:not(.nav-cta):hover,
+.back-link:hover,
+.back-top:hover {
+  color: var(--green);
+}
+
+.nav-cta {
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.nav-cta:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.nav-cta span {
+  margin-left: 8px;
+  color: var(--green);
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  min-height: 590px;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  padding: 53px 7.2% 66px;
+  overflow: hidden;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 530px;
+  padding: 20px 20px 20px 0;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin: 0 0 19px;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.19em;
+}
+
+.eyebrow-line {
+  display: inline-block;
+  width: 27px;
+  height: 1px;
+  background: var(--green);
+}
+
+.hero h1,
+.detail-hero h1 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 6.4vw, 83px);
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 0.99;
+}
+
+.hero h1 span,
+.detail-hero h1 span {
+  color: var(--green);
+}
+
+.hero-description {
+  max-width: 425px;
+  margin: 24px 0 27px;
+  color: #b5bbb7;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 47px;
+  padding: 0 19px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: #141911;
+  background: var(--green);
+}
+
+.button-primary:hover {
+  background: #c6fb83;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 47px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 12px rgba(180, 239, 101, 0.6);
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 430px;
+  background: #242a27;
+}
+
+.hero-image,
+.hero-image-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-image {
+  background-image: url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1600&q=85');
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-image-shade {
+  background: linear-gradient(0deg, rgba(10, 13, 12, 0.8), rgba(10, 13, 12, 0.05) 60%), linear-gradient(90deg, rgba(10, 13, 12, 0.17), transparent);
+}
+
+.hero-image-label {
+  position: absolute;
+  bottom: 31px;
+  left: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-label-top,
+.hero-index,
+.hero-side-label {
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.image-label-bottom {
+  margin-top: 5px;
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.hero-index {
+  position: absolute;
+  right: 25px;
+  bottom: 34px;
+  color: #fff;
+}
+
+.hero-index span {
+  padding: 0 4px;
+  color: var(--muted);
+}
+
+.hero-side-label {
+  position: absolute;
+  top: 50%;
+  right: 2.8%;
+  color: #818984;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+}
+
+.section-wrap {
+  padding-right: 7.2%;
+  padding-left: 7.2%;
+}
+
+.collection {
+  padding-top: 68px;
+  padding-bottom: 75px;
+  background: #151917;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 31px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 12px;
+}
+
+.section-heading h2,
+.detail-summary h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 4vw, 43px);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1.15;
+}
+
+.accent-dot {
+  color: var(--green);
+}
+
+.section-intro {
+  max-width: 340px;
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.bike-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.bike-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  background: var(--surface);
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.bike-card:hover,
+.bike-card:focus-visible {
+  border-color: rgba(180, 239, 101, 0.62);
+  box-shadow: 0 13px 38px rgba(0, 0, 0, 0.22);
+  transform: translateY(-4px);
+}
+
+.bike-photo {
+  min-height: 190px;
+  background-color: #303936;
+  background-position: center;
+  background-size: cover;
+  transition: transform 240ms ease;
+}
+
+.bike-card:hover .bike-photo {
+  transform: scale(1.025);
+}
+
+.photo-ninja {
+  background-image: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80');
+}
+
+.photo-yamaha {
+  background-image: url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=80');
+}
+
+.photo-honda {
+  background-image: url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80');
+}
+
+.photo-bmw {
+  background-image: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80&sat=-45');
+}
+
+.photo-ducati {
+  background-image: url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80&sat=20');
+}
+
+.photo-triumph {
+  background-image: url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=80&sat=-35');
+}
+
+.card-content {
+  padding: 18px 19px 17px;
+}
+
+.card-topline,
+.card-footer,
+.card-specs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-topline {
+  color: #8c9690;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.card-arrow {
+  color: var(--green);
+  font-size: 16px;
+}
+
+.card-content h3 {
+  margin: 10px 0 0;
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.35;
+}
+
+.card-content h3 span {
+  color: #e2e6e2;
+}
+
+.model-year {
+  margin: 3px 0 14px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.card-specs {
+  justify-content: flex-start;
+  gap: 25px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: #aeb4b0;
+  font-size: 11px;
+}
+
+.card-specs strong {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.card-footer {
+  gap: 8px;
+  padding-top: 13px;
+}
+
+.price {
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.price small {
+  display: block;
+  margin-top: 1px;
+  color: #8d9690;
+  font-size: 9px;
+  font-weight: 400;
+}
+
+.view-link {
+  color: #c2c8c3;
+  font-size: 10px;
+}
+
+.view-link span {
+  margin-left: 4px;
+  color: var(--green);
+}
+
+.price-disclaimer {
+  max-width: 800px;
+  margin: 19px 0 0;
+  color: #848d88;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.site-footer,
+.detail-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 23px 7.2%;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.site-footer .brand {
+  color: var(--ink);
+  font-size: 10px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.back-top {
+  color: #d5d9d6;
+}
+
+/* Detail views use URL fragments, so each motorcycle has its own shareable view without JavaScript. */
+.detail-view {
+  display: none;
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.detail-view:target {
+  display: block;
+}
+
+body:has(.detail-view:target) .home-screen {
+  display: none;
+}
+
+.detail-hero {
+  position: relative;
+  display: flex;
+  min-height: 395px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 48px 10% 51px;
+  overflow: hidden;
+  background-color: #202724;
+  background-position: center 48%;
+  background-size: cover;
+}
+
+.detail-hero::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(9, 12, 11, 0.89), rgba(9, 12, 11, 0.43) 60%, rgba(9, 12, 11, 0.1)), linear-gradient(0deg, rgba(9, 12, 11, 0.66), transparent 70%);
+  content: '';
+}
+
+.detail-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.detail-photo-ninja {
+  background-image: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1800&q=85');
+}
+
+.detail-photo-yamaha {
+  background-image: url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1800&q=85');
+}
+
+.detail-photo-honda {
+  background-image: url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1800&q=85');
+}
+
+.detail-photo-bmw {
+  background-image: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1800&q=85&sat=-45');
+}
+
+.detail-photo-ducati {
+  background-image: url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1800&q=85&sat=20');
+}
+
+.detail-photo-triumph {
+  background-image: url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1800&q=85&sat=-35');
+}
+
+.back-link {
+  position: absolute;
+  top: 27px;
+  left: 7.2%;
+  color: #e2e7e3;
+  font-size: 12px;
+}
+
+.detail-hero .eyebrow {
+  margin-bottom: 13px;
+}
+
+.detail-hero h1 {
+  max-width: 850px;
+  font-size: clamp(45px, 6.3vw, 76px);
+}
+
+.detail-hero-line {
+  margin: 14px 0 0;
+  color: #e0e5e1;
+  font-size: 14px;
+}
+
+.detail-body {
+  display: grid;
+  max-width: 1120px;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 48px 70px;
+  margin: 0 auto;
+  padding: 67px 7.2% 56px;
+}
+
+.detail-summary .eyebrow {
+  margin-bottom: 13px;
+}
+
+.detail-summary h2 {
+  font-size: 36px;
+}
+
+.detail-summary > p:not(.eyebrow):not(.detail-price) {
+  margin: 17px 0 0;
+  color: #afb6b1;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.detail-price {
+  margin: 22px 0 0;
+  color: var(--green);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.detail-price span {
+  display: block;
+  color: #8d9690;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.detail-spec-panel {
+  align-self: start;
+  padding: 23px 25px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.detail-spec-panel h2 {
+  margin: 0 0 12px;
+  font-family: var(--font-heading);
+  font-size: 16px;
+}
+
+.detail-spec-panel dl {
+  margin: 0;
+}
+
+.detail-spec-panel dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+}
+
+.detail-spec-panel dt {
+  flex: 0 0 100px;
+  color: var(--muted);
+}
+
+.detail-spec-panel dd {
+  margin: 0;
+  color: #e8ece8;
+  text-align: right;
+}
+
+.detail-feature {
+  display: grid;
+  grid-template-columns: 37px 1fr;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.feature-number {
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.detail-feature h3 {
+  margin: 0 0 7px;
+  font-family: var(--font-heading);
+  font-size: 17px;
+  letter-spacing: -0.03em;
+}
+
+.detail-feature p {
+  margin: 0;
+  color: #aab1ac;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.detail-callout {
+  grid-column: 1 / -1;
+  padding: 17px 20px;
+  border-left: 2px solid var(--green);
+  background: var(--surface);
+}
+
+.detail-callout span {
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.detail-callout p {
+  margin: 5px 0 0;
+  color: #b5bcb7;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.detail-bottom {
+  padding: 0 7.2% 45px;
+  text-align: center;
+}
+
+.detail-footer {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.detail-footer a {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    min-height: 530px;
+  }
+
+  .hero-visual {
+    min-height: 380px;
+  }
+
+  .hero-side-label {
+    display: none;
+  }
+
+  .bike-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .detail-body {
+    gap: 38px;
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 12px;
+  }
+
+  .site-header {
+    min-height: 66px;
+    padding: 0 5%;
+  }
+
+  .brand {
+    gap: 8px;
+    font-size: 10px;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+  }
+
+  .main-nav {
+    gap: 13px;
+    font-size: 11px;
+  }
+
+  .main-nav > a:first-child {
+    display: none;
+  }
+
+  .nav-cta {
+    padding: 8px 9px;
+  }
+
+  .nav-cta span {
+    margin-left: 3px;
+  }
+
+  .hero {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 48px 6% 46px;
+  }
+
+  .hero-copy {
+    padding: 0 0 31px;
+  }
+
+  .hero h1 {
+    font-size: clamp(49px, 13vw, 73px);
+  }
+
+  .hero-description {
+    margin-top: 19px;
+    font-size: 14px;
+  }
+
+  .hero-note {
+    margin-top: 27px;
+  }
+
+  .hero-visual {
+    min-height: 270px;
+  }
+
+  .hero-image-label {
+    bottom: 20px;
+    left: 19px;
+  }
+
+  .image-label-bottom {
+    font-size: 17px;
+  }
+
+  .section-wrap {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .collection {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .section-heading {
+    display: block;
+    margin-bottom: 23px;
+  }
+
+  .section-heading h2 {
+    font-size: 34px;
+  }
+
+  .section-intro {
+    margin-top: 13px;
+  }
+
+  .bike-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .bike-photo {
+    min-height: 220px;
+  }
+
+  .card-content {
+    padding-right: 17px;
+    padding-left: 17px;
+  }
+
+  .site-footer {
+    flex-wrap: wrap;
+    padding: 20px 6%;
+  }
+
+  .site-footer p {
+    order: 1;
+    width: 100%;
+  }
+
+  .detail-hero {
+    min-height: 330px;
+    padding: 37px 7% 37px;
+  }
+
+  .back-link {
+    top: 22px;
+    left: 6%;
+  }
+
+  .detail-hero h1 {
+    font-size: clamp(44px, 11vw, 64px);
+  }
+
+  .detail-body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 43px 6% 37px;
+  }
+
+  .detail-summary h2 {
+    font-size: 31px;
+  }
+
+  .detail-spec-panel {
+    padding: 20px 17px;
+  }
+
+  .detail-spec-panel dl div {
+    gap: 10px;
+  }
+
+  .detail-spec-panel dt {
+    flex-basis: 86px;
+  }
+
+  .detail-feature {
+    padding-top: 17px;
+  }
+
+  .detail-bottom {
+    padding: 0 6% 35px;
+  }
+
+  .detail-footer {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
